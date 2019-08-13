@@ -8,7 +8,7 @@ import org.junit.Test
 class JsonDSLKtTest {
 
     @Test
-    fun test1() {
+    fun test01() {
         assertEquals(
             json {
                 //
@@ -20,7 +20,7 @@ class JsonDSLKtTest {
     }
 
     @Test
-    fun test2() {
+    fun test02() {
         assertEquals(
             jsonArray(
                 //
@@ -32,7 +32,7 @@ class JsonDSLKtTest {
     }
 
     @Test
-    fun test3() {
+    fun test03() {
         assertEquals(
             json {
                 "name" to "Hitanshu"
@@ -48,7 +48,7 @@ class JsonDSLKtTest {
     }
 
     @Test
-    fun test4() {
+    fun test04() {
         assertEquals(
             json {
                 "string" to "String"
@@ -70,7 +70,7 @@ class JsonDSLKtTest {
     }
 
     @Test
-    fun test5() {
+    fun test05() {
         assertEquals(
             jsonArray(
                 "one",
@@ -86,7 +86,7 @@ class JsonDSLKtTest {
     }
 
     @Test
-    fun test6() {
+    fun test06() {
         assertEquals(
             jsonArray(
                 "String",
@@ -106,4 +106,337 @@ class JsonDSLKtTest {
             }.toString()
         )
     }
+
+    @Test
+    fun test07() {
+        assertEquals(
+            json {
+                "name" to "Hitanshu"
+                "age" to 22
+                "male" to true
+                "addresses" to jsonArray(
+                    json {
+                        "line1" to "Flat No. 404, Tower 3, Sec 45"
+                        "line2" to "Near Ram Mandir"
+                        "city" to "Gurgaon"
+                        "state" to "Haryana"
+                        "pinCode" to 122003
+                    },
+                    json {
+                        "line1" to "Flat No. 405, Tower 3, Sec 45"
+                        "line2" to "Near Ram Mandir"
+                        "city" to "Gurgaon"
+                        "state" to "Haryana"
+                        "pinCode" to 122003
+                    },
+                    json {
+                        "line1" to "Flat No. 406, Tower 3, Sec 45"
+                        "line2" to "Near Ram Mandir"
+                        "city" to "Gurgaon"
+                        "state" to "Haryana"
+                        "pinCode" to 122003
+                    }
+                )
+            }.toString(),
+            JSONObject().apply {
+                put("name", "Hitanshu")
+                put("age", 22)
+                put("male", true)
+                put("addresses", JSONArray().apply {
+                    put(JSONObject().apply {
+                        put("line1", "Flat No. 404, Tower 3, Sec 45")
+                        put("line2", "Near Ram Mandir")
+                        put("city", "Gurgaon")
+                        put("state", "Haryana")
+                        put("pinCode", 122003)
+                    })
+                    put(JSONObject().apply {
+                        put("line1", "Flat No. 405, Tower 3, Sec 45")
+                        put("line2", "Near Ram Mandir")
+                        put("city", "Gurgaon")
+                        put("state", "Haryana")
+                        put("pinCode", 122003)
+                    })
+                    put(JSONObject().apply {
+                        put("line1", "Flat No. 406, Tower 3, Sec 45")
+                        put("line2", "Near Ram Mandir")
+                        put("city", "Gurgaon")
+                        put("state", "Haryana")
+                        put("pinCode", 122003)
+                    })
+                })
+            }.toString()
+        )
+    }
+
+    @Test
+    fun test08() {
+        assertEquals(
+            jsonArray(
+                json {
+                    "color" to "red"
+                    "value" to "#f00"
+                },
+                json {
+                    "color" to "green"
+                    "value" to "#0f0"
+                },
+                json {
+                    "color" to "blue"
+                    "value" to "#00f"
+                },
+                json {
+                    "color" to "cyan"
+                    "value" to "#0ff"
+                },
+                json {
+                    "color" to "magenta"
+                    "value" to "#f0f"
+                },
+                json {
+                    "color" to "yellow"
+                    "value" to "#ff0"
+                },
+                json {
+                    "color" to "black"
+                    "value" to "#000"
+                }
+            ).toString(),
+            JSONArray().apply {
+                put(JSONObject().apply {
+                    put("color", "red")
+                    put("value", "#f00")
+                })
+                put(JSONObject().apply {
+                    put("color", "green")
+                    put("value", "#0f0")
+                })
+                put(JSONObject().apply {
+                    put("color", "blue")
+                    put("value", "#00f")
+                })
+                put(JSONObject().apply {
+                    put("color", "cyan")
+                    put("value", "#0ff")
+                })
+                put(JSONObject().apply {
+                    put("color", "magenta")
+                    put("value", "#f0f")
+                })
+                put(JSONObject().apply {
+                    put("color", "yellow")
+                    put("value", "#ff0")
+                })
+                put(JSONObject().apply {
+                    put("color", "black")
+                    put("value", "#000")
+                })
+            }.toString()
+        )
+    }
+
+    @Test
+    fun test09() {
+        assertEquals(
+            json {
+                "id" to "0001"
+                "type" to "donut"
+                "name" to "Cake"
+                "ppu" to 0.55
+                "batters" to json {
+                    "batter" to jsonArray(
+                        json {
+                            "id" to "1001"
+                            "type" to "Regular"
+                        },
+                        json {
+                            "id" to "1002"
+                            "type" to "Chocolate"
+                        },
+                        json {
+                            "id" to "1003"
+                            "type" to "Blueberry"
+                        },
+                        json {
+                            "id" to "1004"
+                            "type" to "Devil's Food"
+                        }
+                    )
+                }
+                "topping" to jsonArray(
+                    json {
+                        "id" to "5001"
+                        "type" to "None"
+                    },
+                    json {
+                        "id" to "5002"
+                        "type" to "Glazed"
+                    },
+                    json {
+                        "id" to "5005"
+                        "type" to "Sugar"
+                    },
+                    json {
+                        "id" to "5007"
+                        "type" to "Powdered Sugar"
+                    },
+                    json {
+                        "id" to "5006"
+                        "type" to "Chocolate with Sprinkles"
+                    },
+                    json {
+                        "id" to "5003"
+                        "type" to "Chocolate"
+                    },
+                    json {
+                        "id" to "5004"
+                        "type" to "Maple"
+                    }
+                )
+            }.toString(),
+            JSONObject().apply {
+                //
+            }.toString()
+        )
+    }
+
+    @Test
+    fun test10() {
+        assertEquals(
+            jsonArray(
+                json {
+                    "id" to "0001"
+                    "type" to "donut"
+                    "name" to "Cake"
+                    "ppu" to 0.55
+                    "batters" to json {
+                        "batter" to jsonArray(
+                            json {
+                                "id" to "1001"
+                                "type" to "Regular"
+                            },
+                            json {
+                                "id" to "1002"
+                                "type" to "Chocolate"
+                            },
+                            json {
+                                "id" to "1003"
+                                "type" to "Blueberry"
+                            },
+                            json {
+                                "id" to "1004"
+                                "type" to "Devil's Food"
+                            }
+                        )
+                    }
+                    "topping" to jsonArray(
+                        json {
+                            "id" to "5001"
+                            "type" to "None"
+                        },
+                        json {
+                            "id" to "5002"
+                            "type" to "Glazed"
+                        },
+                        json {
+                            "id" to "5005"
+                            "type" to "Sugar"
+                        },
+                        json {
+                            "id" to "5007"
+                            "type" to "Powdered Sugar"
+                        },
+                        json {
+                            "id" to "5006"
+                            "type" to "Chocolate with Sprinkles"
+                        },
+                        json {
+                            "id" to "5003"
+                            "type" to "Chocolate"
+                        },
+                        json {
+                            "id" to "5004"
+                            "type" to "Maple"
+                        }
+                    )
+                },
+                json {
+                    "id" to "0002"
+                    "type" to "donut"
+                    "name" to "Raised"
+                    "ppu" to 0.55
+                    "batters" to json {
+                        "batter" to jsonArray(
+                            json {
+                                "id" to "1001"
+                                "type" to "Regular"
+                            }
+                        )
+                    }
+                    "topping" to jsonArray(
+                        json {
+                            "id" to "5001"
+                            "type" to "None"
+                        },
+                        json {
+                            "id" to "5002"
+                            "type" to "Glazed"
+                        },
+                        json {
+                            "id" to "5005"
+                            "type" to "Sugar"
+                        },
+                        json {
+                            "id" to "5003"
+                            "type" to "Chocolate"
+                        },
+                        json {
+                            "id" to "5004"
+                            "type" to "Maple"
+                        }
+                    )
+                },
+                json {
+                    "id" to "0003"
+                    "type" to "donut"
+                    "name" to "Old Fashioned"
+                    "ppu" to 0.55
+                    "batters" to json {
+                        "batter" to jsonArray(
+                            json {
+                                "id" to "1001"
+                                "type" to "Regular"
+                            },
+                            json {
+                                "id" to "1002"
+                                "type" to "Chocolate"
+                            }
+                        )
+                    }
+                    "topping" to jsonArray(
+                        json {
+                            "id" to "5001"
+                            "type" to "None"
+                        },
+                        json {
+                            "id" to "5002"
+                            "type" to "Glazed"
+                        },
+                        json {
+                            "id" to "5003"
+                            "type" to "Chocolate"
+                        },
+                        json {
+                            "id" to "5004"
+                            "type" to "Maple"
+                        }
+                    )
+                }
+            ).toString(),
+            JSONArray().apply {
+                //
+            }.toString()
+        )
+    }
+
 }

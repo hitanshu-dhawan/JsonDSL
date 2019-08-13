@@ -5,8 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/JsonDSL.iml" filepath="$PROJECT_DIR$/.idea/JsonDSL.iml" />
       <module fileurl="file://$PROJECT_DIR$/JsonDSL.iml" filepath="$PROJECT_DIR$/JsonDSL.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
     </modules>
   </component>
