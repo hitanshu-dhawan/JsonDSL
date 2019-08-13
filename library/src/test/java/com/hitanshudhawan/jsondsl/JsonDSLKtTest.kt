@@ -295,7 +295,60 @@ class JsonDSLKtTest {
                 )
             }.toString(),
             JSONObject().apply {
-                //
+                put("id", "0001")
+                put("type", "donut")
+                put("name", "Cake")
+                put("ppu", 0.55)
+                put("batters", JSONObject().apply {
+                    put("batter", JSONArray().apply {
+                        put(JSONObject().apply {
+                            put("id", "1001")
+                            put("type", "Regular")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "1002")
+                            put("type", "Chocolate")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "1003")
+                            put("type", "Blueberry")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "1004")
+                            put("type", "Devil's Food")
+                        })
+                    })
+                })
+                put("topping", JSONArray().apply {
+                    put(JSONObject().apply {
+                        put("id", "5001")
+                        put("type", "None")
+                    })
+                    put(JSONObject().apply {
+                        put("id", "5002")
+                        put("type", "Glazed")
+                    })
+                    put(JSONObject().apply {
+                        put("id", "5005")
+                        put("type", "Sugar")
+                    })
+                    put(JSONObject().apply {
+                        put("id", "5007")
+                        put("type", "Powdered Sugar")
+                    })
+                    put(JSONObject().apply {
+                        put("id", "5006")
+                        put("type", "Chocolate with Sprinkles")
+                    })
+                    put(JSONObject().apply {
+                        put("id", "5003")
+                        put("type", "Chocolate")
+                    })
+                    put(JSONObject().apply {
+                        put("id", "5004")
+                        put("type", "Maple")
+                    })
+                })
             }.toString()
         )
     }
@@ -434,7 +487,134 @@ class JsonDSLKtTest {
                 }
             ).toString(),
             JSONArray().apply {
-                //
+                put(JSONObject().apply {
+                    put("id", "0001")
+                    put("type", "donut")
+                    put("name", "Cake")
+                    put("ppu", 0.55)
+                    put("batters", JSONObject().apply {
+                        put("batter", JSONArray().apply {
+                            put(JSONObject().apply {
+                                put("id", "1001")
+                                put("type", "Regular")
+                            })
+                            put(JSONObject().apply {
+                                put("id", "1002")
+                                put("type", "Chocolate")
+                            })
+                            put(JSONObject().apply {
+                                put("id", "1003")
+                                put("type", "Blueberry")
+                            })
+                            put(JSONObject().apply {
+                                put("id", "1004")
+                                put("type", "Devil's Food")
+                            })
+                        })
+                    })
+                    put("topping", JSONArray().apply {
+                        put(JSONObject().apply {
+                            put("id", "5001")
+                            put("type", "None")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "5002")
+                            put("type", "Glazed")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "5005")
+                            put("type", "Sugar")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "5007")
+                            put("type", "Powdered Sugar")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "5006")
+                            put("type", "Chocolate with Sprinkles")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "5003")
+                            put("type", "Chocolate")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "5004")
+                            put("type", "Maple")
+                        })
+                    })
+                })
+                put(JSONObject().apply {
+                    put("id", "0002")
+                    put("type", "donut")
+                    put("name", "Raised")
+                    put("ppu", 0.55)
+                    put("batters", JSONObject().apply {
+                        put("batter", JSONArray().apply {
+                            put(JSONObject().apply {
+                                put("id", "1001")
+                                put("type", "Regular")
+                            })
+                        })
+                    })
+                    put("topping", JSONArray().apply {
+                        put(JSONObject().apply {
+                            put("id", "5001")
+                            put("type", "None")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "5002")
+                            put("type", "Glazed")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "5005")
+                            put("type", "Sugar")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "5003")
+                            put("type", "Chocolate")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "5004")
+                            put("type", "Maple")
+                        })
+                    })
+                })
+                put(JSONObject().apply {
+                    put("id", "0003")
+                    put("type", "donut")
+                    put("name", "Old Fashioned")
+                    put("ppu", 0.55)
+                    put("batters", JSONObject().apply {
+                        put("batter", JSONArray().apply {
+                            put(JSONObject().apply {
+                                put("id", "1001")
+                                put("type", "Regular")
+                            })
+                            put(JSONObject().apply {
+                                put("id", "1002")
+                                put("type", "Chocolate")
+                            })
+                        })
+                    })
+                    put("topping", JSONArray().apply {
+                        put(JSONObject().apply {
+                            put("id", "5001")
+                            put("type", "None")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "5002")
+                            put("type", "Glazed")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "5003")
+                            put("type", "Chocolate")
+                        })
+                        put(JSONObject().apply {
+                            put("id", "5004")
+                            put("type", "Maple")
+                        })
+                    })
+                })
             }.toString()
         )
     }
