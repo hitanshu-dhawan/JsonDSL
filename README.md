@@ -1,8 +1,67 @@
 # JsonDSL
-// todo
+JsonDSL is a DSL in Kotlin for creating your JSON in a more easy and readable way.
 
 ## Usage
-// todo
+Create a `JSONObject` like this
+```kotlin
+json {
+    "name" to "Hitanshu"
+    "age"  to 22
+    "male" to true
+}
+```
+Create a nested object like this
+```kotlin
+json {
+    "name" to "Hitanshu"
+    "age"  to 22
+    "male" to true
+    "address" to json {
+        "line1" to "Flat No. 100"
+        "line2" to "Triveni Apartments"
+        "city"  to "New Delhi"
+    }
+}
+```
+Create a `JSONArray` like this
+```kotlin
+jsonArray(
+    json {
+        "name" to "Hitanshu"
+        "age"  to 22
+        "male" to true
+    },
+    json {
+        "name" to "Dhawan"
+        "age"  to 23
+        "male" to false
+    }
+)
+```
+Create a more nested object like this
+```kotlin
+json {
+    "name" to "Hitanshu"
+    "age"  to 22
+    "male" to true
+    "phones" to jsonArray(
+        "+91 9999999999",
+        "+91 8888888888"
+    )
+    "addresses" to jsonArray(
+        json {
+            "line1" to "Flat No. 100"
+            "line2" to "Triveni Apartments"
+            "city"  to "New Delhi"
+        },
+        json {
+            "line1" to "Ispat Bhavan"
+            "line2" to "Lodhi Road"
+            "city"  to "New Delhi"
+        }
+    )
+}
+```
 
 ## Download
 Add JitPack repository to your root `build.gradle` file
