@@ -619,4 +619,14 @@ class JsonDSLKtTest {
         )
     }
 
+    @Test(expected = IllegalArgumentException::class)
+    fun test11() {
+        jsonArray("j", 'j', "j")
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun test12() {
+        jsonArray("j", Pair("j", "j"), "j")
+    }
+
 }
