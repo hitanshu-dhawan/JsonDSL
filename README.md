@@ -75,7 +75,7 @@ allprojects {
 Add the dependency to your app `build.gradle` file
 ```
 dependencies {
-    implementation 'com.github.hitanshu-dhawan:JsonDSL:1.0.2'
+    implementation 'com.github.hitanshu-dhawan:JsonDSL:1.0.3'
 }
 ```
 
