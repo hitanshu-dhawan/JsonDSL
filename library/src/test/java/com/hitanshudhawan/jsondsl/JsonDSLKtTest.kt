@@ -619,13 +619,55 @@ class JsonDSLKtTest {
         )
     }
 
-    @Test(expected = IllegalArgumentException::class)
+    @Test
     fun test11() {
+        assertEquals(
+            json {
+                "key" to null
+            }.toString(),
+            JSONObject().apply {
+                put("key", JSONObject.NULL)
+            }.toString()
+        )
+    }
+
+    @Test
+    fun test12() {
+        assertEquals(
+            jsonArray(
+                null,
+                null,
+                null
+            ).toString(),
+            JSONArray().apply {
+                put(JSONObject.NULL)
+                put(JSONObject.NULL)
+                put(JSONObject.NULL)
+            }.toString()
+        )
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun test13() {
+        json {
+            "key" to 'j'
+        }
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun test14() {
+        json {
+            "key" to Pair("j", "j")
+        }
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun test15() {
         jsonArray("j", 'j', "j")
     }
 
     @Test(expected = IllegalArgumentException::class)
-    fun test12() {
+    fun test16() {
         jsonArray("j", Pair("j", "j"), "j")
     }
 

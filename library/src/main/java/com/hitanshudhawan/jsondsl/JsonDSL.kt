@@ -8,24 +8,11 @@ fun json(block: JSONObjectBuilder.() -> Unit) = JSONObjectBuilder().apply(block)
 class JSONObjectBuilder {
     val json = JSONObject()
 
-    infix fun String.to(value: String?) {
-        json.put(this, value ?: JSONObject.NULL)
-    }
-
-    infix fun String.to(value: Number?) {
-        json.put(this, value ?: JSONObject.NULL)
-    }
-
-    infix fun String.to(value: Boolean?) {
-        json.put(this, value ?: JSONObject.NULL)
-    }
-
-    infix fun String.to(value: JSONObject?) {
-        json.put(this, value ?: JSONObject.NULL)
-    }
-
-    infix fun String.to(value: JSONArray?) {
-        json.put(this, value ?: JSONObject.NULL)
+    infix fun String.to(value: Any?) {
+        if (value.isValidDataType())
+            json.put(this, value ?: JSONObject.NULL)
+        else
+            throw IllegalArgumentException("$value is not a valid data type")
     }
 }
 
