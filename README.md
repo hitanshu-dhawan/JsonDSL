@@ -1,8 +1,10 @@
 # JsonDSL
-JsonDSL is a DSL in Kotlin for creating your JSON in a more easy and readable way.
 
+[![](https://jitpack.io/v/hitanshu-dhawan/JsonDSL.svg)](https://jitpack.io/#hitanshu-dhawan/JsonDSL)
 [![CircleCI](https://circleci.com/gh/hitanshu-dhawan/JsonDSL.svg?style=svg)](https://circleci.com/gh/hitanshu-dhawan/JsonDSL)
 [![codecov](https://codecov.io/gh/hitanshu-dhawan/JsonDSL/branch/master/graph/badge.svg)](https://codecov.io/gh/hitanshu-dhawan/JsonDSL)
+
+JsonDSL is a DSL in Kotlin for creating your JSON in a more easy and readable way.
 
 ## Usage
 Create a `JSONObject` like this
