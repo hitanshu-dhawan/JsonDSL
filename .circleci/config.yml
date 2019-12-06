@@ -16,4 +16,4 @@ jobs:
           command: ./gradlew jacocoTestReport
       - run:
           name: Upload Test Coverage Reports
-          command: bash <(curl -s https://codecov.io/bash)
+          command: bash <(curl -s https://codecov.io/bash) -Z
