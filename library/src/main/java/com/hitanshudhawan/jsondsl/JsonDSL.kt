@@ -28,7 +28,7 @@ fun jsonArray(vararg values: Any?): JSONArray {
 }
 
 private fun Any?.isValidDataType() = when (this) {
-    null -> true
     is String, is Number, is Boolean, is JSONObject, is JSONArray -> true
+    null -> true
     else -> false
 }
