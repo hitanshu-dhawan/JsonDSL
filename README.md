@@ -2,6 +2,7 @@
 
 [![](https://jitpack.io/v/hitanshu-dhawan/JsonDSL.svg)](https://jitpack.io/#hitanshu-dhawan/JsonDSL)
 [![CircleCI](https://circleci.com/gh/hitanshu-dhawan/JsonDSL.svg?style=svg)](https://circleci.com/gh/hitanshu-dhawan/JsonDSL)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cb0ce572fe904c76be175d986d5cf3e0)](https://www.codacy.com/manual/hitanshu-dhawan/JsonDSL?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hitanshu-dhawan/JsonDSL&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/hitanshu-dhawan/JsonDSL/branch/master/graph/badge.svg)](https://codecov.io/gh/hitanshu-dhawan/JsonDSL)
 
 JsonDSL is a DSL in Kotlin for creating your JSON in a more easy and readable way.
