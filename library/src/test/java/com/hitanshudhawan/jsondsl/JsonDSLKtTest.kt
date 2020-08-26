@@ -5,7 +5,7 @@ import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class JsonDSLKtTest {
+internal class JsonDSLKtTest {
 
     @Test
     fun test01() {

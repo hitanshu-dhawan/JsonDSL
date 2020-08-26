@@ -3,12 +3,14 @@ package com.hitanshudhawan.jsondsl
 import org.json.JSONArray
 import org.json.JSONObject
 
-fun json(block: JSONObjectBuilder.() -> Unit) = JSONObjectBuilder().apply(block).json
+public fun json(block: JSONObjectBuilder.() -> Unit): JSONObject {
+    return JSONObjectBuilder().apply(block).json
+}
 
-class JSONObjectBuilder {
-    val json = JSONObject()
+public class JSONObjectBuilder {
+    public val json: JSONObject = JSONObject()
 
-    infix fun String.to(value: Any?) {
+    public infix fun String.to(value: Any?) {
         if (value.isValidDataType())
             json.put(this, value ?: JSONObject.NULL)
         else
@@ -16,7 +18,7 @@ class JSONObjectBuilder {
     }
 }
 
-fun jsonArray(vararg values: Any?): JSONArray {
+public fun jsonArray(vararg values: Any?): JSONArray {
     val jsonArray = JSONArray()
     for (value in values) {
         if (value.isValidDataType())
