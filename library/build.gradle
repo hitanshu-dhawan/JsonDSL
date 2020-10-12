@@ -12,7 +12,7 @@ dependencies {
 
     implementation "org.json:json:20180813"
 
-    testImplementation "junit:junit:4.13"
+    testImplementation "junit:junit:4.13.1"
 }
 
 kotlin.explicitApi = 'strict'
