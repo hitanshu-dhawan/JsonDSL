@@ -10,7 +10,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
-    implementation "org.json:json:20180813"
+    implementation "org.json:json:20201115"
 
     testImplementation "junit:junit:4.13"
 }
